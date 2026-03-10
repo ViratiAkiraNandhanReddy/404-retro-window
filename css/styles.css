@@ -109,14 +109,14 @@ body {
   padding: 80px 40px;
   text-align: center;
   min-height: 200px;
-}
-
-.main-text {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+}
+
+.sad-face {
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -164,5 +164,9 @@ h1 {
     display: block;
     margin: 40px auto 0;
     width: fit-content;
+  }
+
+  .window-wrapper {
+    box-shadow: none;
   }
 }
