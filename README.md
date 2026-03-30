@@ -29,13 +29,20 @@ Perfect for developers who appreciate **design details** and want their 404 page
 
 ## **📸 Preview**
 
-### **Desktop View**
+| Desktop | Mobile |
+|------|---------|
+| ![Desktop Preview](desktop.png) |![Mobile Preview](mobile%20-%20(iPhone%2014%20Pro%20Max).png) |
 
-![Desktop](desktop.png)
+## Color Controls 
+
+https://github.com/user-attachments/assets/021f16c6-458b-4bbd-906a-994a75f00cef
+
+
+![Desktop]()
 
 ### **Mobile View**
 
-![Mobile](mobile%20-%20(iPhone%2014%20Pro%20Max).png)
+![Mobile]()
 
 ---
 
