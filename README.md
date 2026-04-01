@@ -37,13 +37,6 @@ Perfect for developers who appreciate **design details** and want their 404 page
 
 https://github.com/user-attachments/assets/021f16c6-458b-4bbd-906a-994a75f00cef
 
-
-![Desktop]()
-
-### **Mobile View**
-
-![Mobile]()
-
 ---
 
 ## **✨ Features**
