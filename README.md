@@ -31,7 +31,7 @@ Perfect for developers who appreciate **design details** and want their 404 page
 
 | Desktop | Mobile |
 |------|---------|
-| ![Desktop Preview](desktop.png) |![Mobile Preview](mobile%20-%20(iPhone%2014%20Pro%20Max).png) |
+| ![Desktop Preview](assets/previews/desktop.png) |![Mobile Preview](assets/previews/mobile.png) |
 
 ## Color Controls 
 
