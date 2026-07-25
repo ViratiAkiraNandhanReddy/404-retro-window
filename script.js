@@ -1,7 +1,9 @@
-// © 2026 VIRATI AKIRANANDHAN REDDY
-// https://github.com/ViratiAkiraNandhanReddy/404-retro-window
+/* 
+© 2026 Not Found Pages · 404-retro-macos-desktop-remastered
+Released under the MIT License
 
-function changeColor(color) {
-  document.body.style.backgroundColor = color;
-  document.documentElement.style.setProperty('--bg-color', color);
-}
+Repository → https://github.com/notfoundpages/404-retro-macos-desktop-remastered
+Live Preview → https://notfoundpages.github.io/404-retro-macos-desktop-remastered
+
+Discover the full collection → https://notfoundpages.github.io
+*/
