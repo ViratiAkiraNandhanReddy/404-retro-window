@@ -7,3 +7,97 @@ Live Preview → https://notfoundpages.github.io/404-retro-macos-desktop-remaste
 
 Discover the full collection → https://notfoundpages.github.io
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>404-retro-macos-desktop-remastered • notfoundpages</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+  <!-- Overlay Effects -->
+  <div class="crt-overlay"></div>
+  <div class="crt-flicker"></div>
+
+  <!-- Global Menu Bar -->
+  <nav class="menu-bar">
+    <div class="menu-item" onclick="changeTheme('#2b7fff')">Blue</div>
+    <div class="menu-item" onclick="changeTheme('#ffbd2e')">Amber</div>
+    <div class="menu-item" onclick="changeTheme('#8540ff')">Purple</div>
+    <div class="menu-item clock" id="clock">12:00 PM</div>
+  </nav>
+
+  <!-- Desktop Icon -->
+  <div class="desktop-icon" onclick="window.location.href='/'">
+    <svg viewBox="0 0 100 100">
+      <path d="M20 20 H80 V80 H20 Z" fill="#fff" stroke="#000" stroke-width="4" />
+      <path d="M20 35 H80" stroke="#000" stroke-width="4" />
+      <circle cx="35" cy="55" r="5" fill="#000" />
+      <circle cx="65" cy="55" r="5" fill="#000" />
+      <path d="M45 70 Q50 75 55 70" stroke="#000" stroke-width="4" fill="none" />
+    </svg>
+    <span>⚠️</span>
+  </div>
+
+  <!-- Main Window -->
+  <div class="window-wrapper" id="main-window">
+    <div class="title-bar" id="drag-handle">
+      <div class="controls">
+        <!-- Controls: Close, Minimize, Maximize -->
+        <button class="color-dot red" title="Close" onclick="closeWindow()"></button>
+        <button class="color-dot yellow" title="Minimize" onclick="toggleMinimize()"></button>
+        <button class="color-dot green" title="Maximize" onclick="toggleMaximize()"></button>
+      </div>
+      <span class="title-text">Kernel Panic - 404</span>
+    </div>
+
+    <div class="content">
+      <!-- Sad Mac SVG -->
+      <svg class="sad-mac" width="90" height="90" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="70" height="60" rx="5" fill="none" stroke="var(--border-color)" stroke-width="5" />
+        <rect x="25" y="25" width="50" height="35" fill="var(--border-color)" />
+        <path d="M 35 32 L 42 39 M 42 32 L 35 39" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+        <path d="M 58 32 L 65 39 M 65 32 L 58 39" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+        <path d="M 42 50 Q 50 43 58 50" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" />
+        <line x1="65" y1="65" x2="75" y2="65" stroke="var(--border-color)" stroke-width="4" stroke-linecap="round" />
+      </svg>
+
+      <h1>404</h1>
+
+      <div class="terminal-text" id="terminal">
+        <span id="typed-output"></span><span class="cursor"></span>
+      </div>
+
+      <div class="btn-container">
+        <a href="/" class="retro-btn primary">RETURN HOME</a>
+        <button class="retro-btn" onclick="retryConnection()">RETRY</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fatal Error Full Screen -->
+  <div class="reboot-overlay" id="reboot">
+    <div>SYSTEM HALTED.</div>
+    <div style="font-size: 16px; margin-top: 20px; color: #888;">Press any key to reboot...</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
