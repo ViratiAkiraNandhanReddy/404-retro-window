@@ -454,18 +454,132 @@ h1::after {
   font-size: 24px;
 }
 
+.reboot-text {
+  font-size: 16px;
+  margin-top: 20px;
+  color: #888;
+  animation: slow-blink 2s step-end infinite;
+  text-align: center;
+  padding: 0 20px;
+}
+
+@keyframes slow-blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- MOBILE RESPONSIVENESS & TOUCH UX --- */
 @media (max-width: 768px) {
+
+  /* 1. Menu Bar: Make it tall enough for thumbs */
+  :root {
+    --menu-bar-h: 44px;
+  }
+
+  .menu-item {
+    padding: 0 16px;
+    font-size: 16px;
+  }
+
+  .menu-item.clock {
+    font-size: 14px;
+  }
+
+  /* 2. Window Wrapper: Lock it in place, disable JS drag positioning */
   .window-wrapper {
-    width: 90%;
+    width: 92%;
+    max-width: 400px;
+    /* Override absolute JS positioning for a natural flow */
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin: calc(var(--menu-bar-h) + 20px) auto 20px auto;
+    box-shadow: 6px 6px 0px 0px var(--border-color);
+  }
+
+  /* 3. Title Bar: Larger traffic light buttons */
+  .title-bar {
+    padding: 12px 16px;
+  }
+
+  .color-dot {
+    width: 20px;
+    height: 20px;
+  }
+
+  .title-text {
+    font-size: 12px;
+    margin-right: 0;
+    text-align: right;
+    /* Shift text right to balance larger dots */
+  }
+
+  /* 4. Content Typography & Spacing */
+  .content {
+    padding: 30px 20px;
+  }
+
+  .sad-mac {
+    width: 70px;
+    height: 70px;
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: clamp(3.5rem, 15vw, 5rem);
   }
 
+  .terminal-text {
+    font-size: 16px;
+    height: 100px;
+    margin-top: 20px;
+  }
+
+  /* 5. Big Tappable Buttons: Stack them vertically */
+  .btn-container {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .retro-btn {
+    width: 100%;
+    text-align: center;
+    padding: 16px 20px;
+    /* Fat finger friendly */
+    font-size: 16px;
+  }
+
+  /* 6. Desktop Icon: Reposition as a bottom element instead of hiding */
   .desktop-icon {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 45px auto;
+    /* Sits below the window now */
+    padding-bottom: 40px;
+  }
+}
+
+/* Extra small devices (narrow phones) */
+@media (max-width: 400px) {
+  .menu-item {
+    padding: 0 10px;
+    font-size: 14px;
   }
 
-  /* Hide on mobile to save space */
+  .title-text {
+    display: none;
+    /* Hide window title if it collides with dots */
+  }
 }
