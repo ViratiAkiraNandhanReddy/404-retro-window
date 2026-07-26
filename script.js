@@ -29,7 +29,7 @@ let startX, startY, initialLeft, initialTop;
 
 // Center window on load
 function centerWindow() {
-  if (isMaximized) return;
+  if (isMaximized || window.innerWidth <= 768) return;
   const rect = windowEl.getBoundingClientRect();
   windowEl.style.left = (window.innerWidth / 2 - rect.width / 2) + 'px';
   windowEl.style.top = (window.innerHeight / 2 - rect.height / 2) + 'px';
@@ -41,7 +41,7 @@ dragHandle.addEventListener('mousedown', dragStart);
 dragHandle.addEventListener('touchstart', dragStart, { passive: false });
 
 function dragStart(e) {
-  if (isMaximized) return; // Prevent drag if full screen
+  if (isMaximized || window.innerWidth <= 768) return; // Prevent drag if full screen
   if (e.target.classList.contains('color-dot')) return; // Ignore buttons
 
   isDragging = true;
@@ -90,15 +90,19 @@ function closeWindow() {
   }, 500);
 }
 
-// Listen for keypress to reboot
-document.addEventListener('keydown', (e) => {
+// Listen for keypress, click, or tap to reboot
+function handleReboot() {
   if (document.getElementById('reboot').style.display === 'flex') {
     location.reload();
   }
-});
+}
+
+document.addEventListener('keydown', handleReboot);
+document.addEventListener('click', handleReboot);
+document.addEventListener('touchstart', handleReboot, { passive: true });
 
 function toggleMinimize() {
-  if (isMaximized) return; // Don't minimize if maximized
+  if (isMaximized || window.innerWidth <= 768) return; // Don't minimize if maximized
   windowEl.classList.toggle('minimized');
 }
 
